@@ -1,0 +1,495 @@
+date,type,category,amount,description
+2024-01-01,credit,Salary,50000,Monthly Salary
+2024-01-01,debit,Groceries,1621,Supermarket
+2024-01-01,debit,Transport,1948,Bus
+2024-01-02,debit,Entertainment,612,OTT
+2024-01-02,debit,Food,1081,Cafe
+2024-01-03,debit,Shopping,1985,Mall
+2024-01-03,debit,Fuel,670,Petrol Pump
+2024-01-03,debit,Bills,603,Water
+2024-01-04,debit,Entertainment,1550,OTT
+2024-01-04,debit,Fuel,1793,Petrol Pump
+2024-01-04,debit,Shopping,348,Flipkart
+2024-01-05,debit,Transport,503,Uber
+2024-01-06,debit,Entertainment,1149,Games
+2024-01-07,debit,Bills,306,Electricity
+2024-01-07,debit,Transport,393,Auto
+2024-01-07,debit,Food,1543,Cafe
+2024-01-08,debit,Transport,349,Auto
+2024-01-08,debit,Shopping,2640,Mall
+2024-01-08,debit,Food,1143,Zomato
+2024-01-09,debit,Entertainment,1704,Games
+2024-01-09,debit,Transport,2750,Bus
+2024-01-09,debit,Entertainment,445,Movie
+2024-01-09,debit,Shopping,2000,Amazon
+2024-01-10,debit,Entertainment,1942,OTT
+2024-01-10,debit,Fuel,664,Petrol Pump
+2024-01-11,debit,Entertainment,2819,Games
+2024-01-11,debit,Transport,1519,Bus
+2024-01-11,debit,Fuel,2555,Petrol Pump
+2024-01-11,debit,Transport,2492,Bus
+2024-01-12,debit,Entertainment,2580,Movie
+2024-01-12,debit,Groceries,2777,Supermarket
+2024-01-12,debit,Food,1120,Zomato
+2024-01-12,debit,Fuel,2127,Petrol Pump
+2024-01-13,debit,Bills,1518,Water
+2024-01-13,debit,Entertainment,183,OTT
+2024-01-13,debit,Shopping,2892,Mall
+2024-01-14,debit,Transport,518,Auto
+2024-01-14,debit,Shopping,1798,Mall
+2024-01-14,debit,Shopping,1560,Mall
+2024-01-14,debit,Transport,334,Uber
+2024-01-15,debit,Food,813,Cafe
+2024-01-16,debit,Shopping,1255,Flipkart
+2024-01-16,debit,Transport,455,Auto
+2024-01-16,debit,Bills,2862,Electricity
+2024-01-16,debit,Food,240,Zomato
+2024-01-17,debit,Transport,2442,Auto
+2024-01-17,debit,Entertainment,1341,Movie
+2024-01-17,debit,Food,107,Cafe
+2024-01-17,debit,Groceries,2272,Supermarket
+2024-01-18,debit,Entertainment,2784,Games
+2024-01-19,debit,Groceries,2269,Supermarket
+2024-01-19,debit,Bills,1224,Electricity
+2024-01-19,debit,Groceries,322,Supermarket
+2024-01-19,debit,Fuel,1823,Petrol Pump
+2024-01-20,debit,Groceries,2499,Supermarket
+2024-01-20,debit,Fuel,916,Petrol Pump
+2024-01-20,debit,Transport,1896,Auto
+2024-01-20,debit,Groceries,2120,Supermarket
+2024-01-21,debit,Fuel,806,Petrol Pump
+2024-01-21,debit,Bills,824,Electricity
+2024-01-21,debit,Transport,2741,Auto
+2024-01-22,debit,Shopping,484,Flipkart
+2024-01-22,debit,Bills,51,Internet
+2024-01-22,debit,Transport,392,Uber
+2024-01-23,debit,Food,2872,Swiggy
+2024-01-24,debit,Shopping,2624,Flipkart
+2024-01-24,debit,Shopping,1182,Mall
+2024-01-24,debit,Groceries,324,Supermarket
+2024-01-25,debit,Bills,2314,Internet
+2024-01-25,debit,Food,77,Swiggy
+2024-01-26,debit,Groceries,768,Supermarket
+2024-01-26,debit,Fuel,1558,Petrol Pump
+2024-01-26,debit,Shopping,1923,Flipkart
+2024-01-26,debit,Transport,2882,Bus
+2024-01-27,debit,Food,117,Swiggy
+2024-01-28,debit,Fuel,670,Petrol Pump
+2024-01-28,debit,Fuel,2025,Petrol Pump
+2024-01-29,debit,Fuel,2194,Petrol Pump
+2024-01-30,debit,Groceries,262,Local Store
+2024-01-30,debit,Groceries,870,Local Store
+2024-01-30,debit,Fuel,213,Petrol Pump
+2024-01-31,debit,Fuel,2958,Petrol Pump
+2024-01-31,debit,Groceries,1481,Supermarket
+2024-02-01,credit,Salary,50000,Monthly Salary
+2024-02-01,debit,Shopping,2389,Mall
+2024-02-02,debit,Shopping,2163,Amazon
+2024-02-03,debit,Groceries,2624,Local Store
+2024-02-03,debit,Food,878,Zomato
+2024-02-03,debit,Shopping,1474,Amazon
+2024-02-03,debit,Food,1502,Zomato
+2024-02-04,debit,Groceries,965,Local Store
+2024-02-04,debit,Bills,2943,Electricity
+2024-02-04,debit,Bills,2857,Water
+2024-02-05,debit,Transport,1304,Auto
+2024-02-06,debit,Fuel,2479,Petrol Pump
+2024-02-06,debit,Food,2441,Cafe
+2024-02-07,debit,Fuel,2030,Petrol Pump
+2024-02-07,debit,Bills,853,Electricity
+2024-02-07,debit,Transport,1529,Auto
+2024-02-08,debit,Groceries,2936,Supermarket
+2024-02-08,debit,Food,1544,Restaurant
+2024-02-08,debit,Groceries,702,Local Store
+2024-02-09,debit,Food,2967,Restaurant
+2024-02-09,debit,Transport,625,Auto
+2024-02-09,debit,Groceries,1387,Local Store
+2024-02-10,debit,Fuel,2972,Petrol Pump
+2024-02-10,debit,Shopping,1872,Mall
+2024-02-10,debit,Shopping,1591,Mall
+2024-02-10,debit,Bills,1768,Electricity
+2024-02-11,debit,Groceries,2896,Supermarket
+2024-02-12,debit,Fuel,937,Petrol Pump
+2024-02-12,debit,Bills,1455,Internet
+2024-02-12,debit,Groceries,532,Local Store
+2024-02-12,debit,Bills,1309,Electricity
+2024-02-13,debit,Transport,1229,Auto
+2024-02-14,debit,Food,2143,Restaurant
+2024-02-14,debit,Transport,603,Uber
+2024-02-15,debit,Bills,1440,Water
+2024-02-15,debit,Entertainment,2788,OTT
+2024-02-16,debit,Transport,2273,Uber
+2024-02-16,debit,Bills,1456,Internet
+2024-02-16,debit,Food,2524,Zomato
+2024-02-17,debit,Bills,2579,Water
+2024-02-17,debit,Transport,1545,Auto
+2024-02-17,debit,Food,1571,Cafe
+2024-02-17,debit,Entertainment,736,OTT
+2024-02-18,debit,Fuel,1553,Petrol Pump
+2024-02-18,debit,Bills,758,Electricity
+2024-02-19,debit,Food,2379,Swiggy
+2024-02-19,debit,Shopping,1573,Amazon
+2024-02-20,debit,Bills,1011,Electricity
+2024-02-20,debit,Entertainment,1764,Movie
+2024-02-21,debit,Transport,439,Bus
+2024-02-21,debit,Groceries,110,Supermarket
+2024-02-22,debit,Shopping,1659,Flipkart
+2024-02-22,debit,Fuel,491,Petrol Pump
+2024-02-22,debit,Bills,2964,Electricity
+2024-02-23,debit,Groceries,1162,Local Store
+2024-02-23,debit,Fuel,2053,Petrol Pump
+2024-02-24,debit,Transport,2668,Bus
+2024-02-24,debit,Food,2338,Cafe
+2024-02-25,debit,Shopping,235,Flipkart
+2024-02-26,debit,Food,1586,Cafe
+2024-02-26,debit,Transport,2553,Uber
+2024-02-26,debit,Food,1970,Cafe
+2024-02-27,debit,Food,1335,Zomato
+2024-02-28,debit,Food,1330,Swiggy
+2024-02-28,debit,Shopping,1852,Flipkart
+2024-02-28,debit,Fuel,171,Petrol Pump
+2024-02-28,debit,Groceries,2595,Supermarket
+2024-02-29,debit,Entertainment,2169,Games
+2024-02-29,debit,Transport,701,Auto
+2024-03-01,credit,Salary,50000,Monthly Salary
+2024-03-01,debit,Groceries,890,Local Store
+2024-03-01,debit,Fuel,2119,Petrol Pump
+2024-03-01,debit,Food,1771,Zomato
+2024-03-02,debit,Bills,1031,Internet
+2024-03-02,debit,Food,248,Zomato
+2024-03-03,debit,Bills,2092,Internet
+2024-03-03,debit,Fuel,2544,Petrol Pump
+2024-03-03,debit,Entertainment,2885,Movie
+2024-03-04,debit,Entertainment,1197,Games
+2024-03-04,debit,Bills,179,Water
+2024-03-04,debit,Groceries,2868,Supermarket
+2024-03-05,debit,Entertainment,2121,Games
+2024-03-05,debit,Entertainment,1120,Games
+2024-03-05,debit,Entertainment,2072,OTT
+2024-03-06,debit,Fuel,1791,Petrol Pump
+2024-03-07,debit,Shopping,309,Flipkart
+2024-03-07,debit,Shopping,1518,Flipkart
+2024-03-08,debit,Shopping,181,Mall
+2024-03-09,debit,Groceries,2594,Supermarket
+2024-03-10,debit,Transport,2938,Auto
+2024-03-10,debit,Food,2792,Zomato
+2024-03-10,debit,Transport,1350,Uber
+2024-03-10,debit,Transport,697,Bus
+2024-03-11,debit,Bills,1240,Electricity
+2024-03-11,debit,Shopping,1241,Amazon
+2024-03-11,debit,Groceries,2400,Local Store
+2024-03-12,debit,Groceries,924,Supermarket
+2024-03-12,debit,Bills,1065,Electricity
+2024-03-13,debit,Bills,1090,Water
+2024-03-13,debit,Bills,2961,Water
+2024-03-14,debit,Bills,598,Internet
+2024-03-14,debit,Shopping,2545,Flipkart
+2024-03-14,debit,Transport,609,Bus
+2024-03-15,debit,Entertainment,2746,Games
+2024-03-16,debit,Bills,2519,Internet
+2024-03-16,debit,Entertainment,1856,OTT
+2024-03-16,debit,Bills,1912,Internet
+2024-03-17,debit,Bills,508,Electricity
+2024-03-18,debit,Fuel,1910,Petrol Pump
+2024-03-18,debit,Bills,2469,Electricity
+2024-03-18,debit,Groceries,1518,Local Store
+2024-03-18,debit,Entertainment,2129,OTT
+2024-03-19,debit,Fuel,445,Petrol Pump
+2024-03-19,debit,Shopping,1578,Flipkart
+2024-03-20,debit,Fuel,968,Petrol Pump
+2024-03-20,debit,Entertainment,1056,Movie
+2024-03-21,debit,Food,652,Zomato
+2024-03-22,debit,Shopping,2262,Amazon
+2024-03-22,debit,Food,1056,Cafe
+2024-03-22,debit,Groceries,1140,Local Store
+2024-03-22,debit,Shopping,785,Amazon
+2024-03-23,debit,Fuel,827,Petrol Pump
+2024-03-23,debit,Food,875,Swiggy
+2024-03-23,debit,Transport,435,Uber
+2024-03-24,debit,Food,245,Swiggy
+2024-03-24,debit,Groceries,2592,Supermarket
+2024-03-24,debit,Transport,835,Uber
+2024-03-24,debit,Transport,2428,Bus
+2024-03-25,debit,Groceries,911,Supermarket
+2024-03-25,debit,Bills,441,Water
+2024-03-25,debit,Food,1567,Restaurant
+2024-03-25,debit,Transport,1097,Auto
+2024-03-26,debit,Food,392,Zomato
+2024-03-26,debit,Transport,2990,Auto
+2024-03-27,debit,Fuel,1470,Petrol Pump
+2024-03-28,debit,Entertainment,276,Games
+2024-03-28,debit,Fuel,83,Petrol Pump
+2024-03-28,debit,Bills,1176,Water
+2024-03-29,debit,Groceries,2046,Local Store
+2024-03-29,debit,Shopping,2077,Mall
+2024-03-30,debit,Bills,2152,Internet
+2024-03-31,debit,Bills,196,Water
+2024-04-01,credit,Salary,50000,Monthly Salary
+2024-04-01,debit,Bills,1433,Water
+2024-04-01,debit,Fuel,613,Petrol Pump
+2024-04-02,debit,Bills,2021,Water
+2024-04-03,debit,Food,2919,Cafe
+2024-04-03,debit,Transport,1821,Uber
+2024-04-04,debit,Shopping,2498,Flipkart
+2024-04-04,debit,Bills,2289,Water
+2024-04-04,debit,Groceries,2924,Local Store
+2024-04-05,debit,Fuel,945,Petrol Pump
+2024-04-06,debit,Groceries,1612,Local Store
+2024-04-06,debit,Entertainment,2047,Games
+2024-04-06,debit,Entertainment,1207,Movie
+2024-04-06,debit,Groceries,686,Local Store
+2024-04-07,debit,Entertainment,2058,Movie
+2024-04-07,debit,Food,2711,Swiggy
+2024-04-08,debit,Shopping,2296,Flipkart
+2024-04-08,debit,Transport,952,Uber
+2024-04-08,debit,Food,827,Restaurant
+2024-04-08,debit,Fuel,1822,Petrol Pump
+2024-04-09,debit,Bills,299,Water
+2024-04-09,debit,Food,294,Restaurant
+2024-04-09,debit,Entertainment,1578,Movie
+2024-04-09,debit,Bills,2112,Electricity
+2024-04-10,debit,Fuel,2812,Petrol Pump
+2024-04-10,debit,Shopping,2554,Flipkart
+2024-04-11,debit,Shopping,2219,Mall
+2024-04-11,debit,Groceries,2633,Local Store
+2024-04-11,debit,Shopping,435,Mall
+2024-04-12,debit,Shopping,2659,Amazon
+2024-04-12,debit,Fuel,289,Petrol Pump
+2024-04-12,debit,Shopping,1942,Flipkart
+2024-04-12,debit,Food,1831,Zomato
+2024-04-13,debit,Shopping,943,Mall
+2024-04-13,debit,Fuel,1292,Petrol Pump
+2024-04-13,debit,Transport,1810,Auto
+2024-04-14,debit,Food,786,Restaurant
+2024-04-14,debit,Fuel,522,Petrol Pump
+2024-04-15,debit,Food,1327,Zomato
+2024-04-15,debit,Shopping,1143,Flipkart
+2024-04-15,debit,Entertainment,1072,OTT
+2024-04-16,debit,Bills,2629,Electricity
+2024-04-16,debit,Shopping,2224,Flipkart
+2024-04-16,debit,Shopping,2760,Amazon
+2024-04-17,debit,Entertainment,243,Games
+2024-04-18,debit,Bills,111,Internet
+2024-04-18,debit,Shopping,898,Amazon
+2024-04-18,debit,Bills,2272,Water
+2024-04-19,debit,Transport,180,Bus
+2024-04-19,debit,Bills,1134,Internet
+2024-04-20,debit,Fuel,1778,Petrol Pump
+2024-04-21,debit,Groceries,2419,Local Store
+2024-04-21,debit,Transport,933,Uber
+2024-04-22,debit,Fuel,291,Petrol Pump
+2024-04-22,debit,Shopping,794,Mall
+2024-04-22,debit,Food,1761,Zomato
+2024-04-22,debit,Transport,1275,Bus
+2024-04-23,debit,Groceries,1593,Local Store
+2024-04-23,debit,Shopping,1863,Flipkart
+2024-04-23,debit,Groceries,2308,Local Store
+2024-04-24,debit,Transport,1983,Bus
+2024-04-24,debit,Bills,808,Electricity
+2024-04-25,debit,Fuel,529,Petrol Pump
+2024-04-25,debit,Entertainment,205,Games
+2024-04-26,debit,Groceries,2274,Local Store
+2024-04-26,debit,Entertainment,2388,Movie
+2024-04-26,debit,Shopping,669,Flipkart
+2024-04-26,debit,Bills,2425,Electricity
+2024-04-27,debit,Bills,1454,Electricity
+2024-04-27,debit,Shopping,2653,Mall
+2024-04-28,debit,Shopping,1920,Mall
+2024-04-28,debit,Bills,2399,Electricity
+2024-04-29,debit,Groceries,1777,Local Store
+2024-04-30,debit,Entertainment,2635,Games
+2024-04-30,debit,Bills,2137,Water
+2024-04-30,debit,Shopping,2912,Flipkart
+2024-05-01,credit,Salary,50000,Monthly Salary
+2024-05-01,debit,Food,2759,Restaurant
+2024-05-01,debit,Shopping,1444,Amazon
+2024-05-01,debit,Entertainment,339,Movie
+2024-05-01,debit,Food,1100,Zomato
+2024-05-02,debit,Transport,982,Bus
+2024-05-02,debit,Fuel,821,Petrol Pump
+2024-05-02,debit,Fuel,1608,Petrol Pump
+2024-05-02,debit,Entertainment,1056,OTT
+2024-05-03,debit,Entertainment,1385,Games
+2024-05-03,debit,Groceries,663,Local Store
+2024-05-04,debit,Transport,1637,Uber
+2024-05-04,debit,Bills,332,Electricity
+2024-05-04,debit,Transport,490,Auto
+2024-05-05,debit,Bills,84,Water
+2024-05-06,debit,Groceries,2919,Supermarket
+2024-05-07,debit,Food,1331,Zomato
+2024-05-07,debit,Fuel,760,Petrol Pump
+2024-05-08,debit,Transport,1567,Bus
+2024-05-08,debit,Shopping,1610,Amazon
+2024-05-09,debit,Transport,2351,Auto
+2024-05-09,debit,Shopping,349,Flipkart
+2024-05-09,debit,Fuel,648,Petrol Pump
+2024-05-10,debit,Bills,2208,Water
+2024-05-10,debit,Shopping,244,Amazon
+2024-05-11,debit,Fuel,2825,Petrol Pump
+2024-05-11,debit,Shopping,2503,Mall
+2024-05-11,debit,Fuel,1402,Petrol Pump
+2024-05-11,debit,Shopping,1608,Flipkart
+2024-05-12,debit,Groceries,404,Supermarket
+2024-05-12,debit,Groceries,772,Supermarket
+2024-05-13,debit,Fuel,806,Petrol Pump
+2024-05-13,debit,Food,2710,Zomato
+2024-05-13,debit,Fuel,1472,Petrol Pump
+2024-05-14,debit,Shopping,2915,Flipkart
+2024-05-14,debit,Bills,2000,Internet
+2024-05-15,debit,Groceries,672,Local Store
+2024-05-16,debit,Transport,156,Uber
+2024-05-17,debit,Bills,1777,Water
+2024-05-18,debit,Food,1594,Swiggy
+2024-05-18,debit,Food,2120,Zomato
+2024-05-18,debit,Entertainment,153,Movie
+2024-05-18,debit,Entertainment,1368,OTT
+2024-05-19,debit,Groceries,2530,Local Store
+2024-05-19,debit,Entertainment,2143,OTT
+2024-05-19,debit,Transport,823,Uber
+2024-05-20,debit,Groceries,1227,Local Store
+2024-05-20,debit,Entertainment,2252,OTT
+2024-05-21,debit,Bills,467,Electricity
+2024-05-21,debit,Entertainment,1068,Movie
+2024-05-21,debit,Bills,298,Internet
+2024-05-22,debit,Bills,1810,Internet
+2024-05-22,debit,Shopping,2135,Amazon
+2024-05-22,debit,Bills,2763,Internet
+2024-05-23,debit,Shopping,1117,Flipkart
+2024-05-24,debit,Groceries,665,Supermarket
+2024-05-24,debit,Groceries,2831,Local Store
+2024-05-25,debit,Bills,599,Electricity
+2024-05-25,debit,Food,2158,Zomato
+2024-05-26,debit,Bills,2683,Electricity
+2024-05-27,debit,Entertainment,1697,Games
+2024-05-27,debit,Food,2470,Zomato
+2024-05-27,debit,Transport,469,Auto
+2024-05-27,debit,Groceries,2615,Local Store
+2024-05-28,debit,Shopping,522,Flipkart
+2024-05-29,debit,Food,190,Zomato
+2024-05-29,debit,Bills,230,Internet
+2024-05-30,debit,Transport,2334,Uber
+2024-05-30,debit,Shopping,487,Mall
+2024-05-31,debit,Fuel,2739,Petrol Pump
+2024-05-31,debit,Food,2858,Restaurant
+2024-05-31,debit,Bills,1661,Water
+2024-05-31,debit,Groceries,781,Local Store
+2024-06-01,credit,Salary,50000,Monthly Salary
+2024-06-01,debit,Groceries,2099,Supermarket
+2024-06-01,debit,Fuel,1618,Petrol Pump
+2024-06-01,debit,Entertainment,161,Games
+2024-06-01,debit,Food,196,Swiggy
+2024-06-02,debit,Shopping,1351,Mall
+2024-06-02,debit,Food,739,Cafe
+2024-06-02,debit,Food,638,Zomato
+2024-06-02,debit,Food,2644,Cafe
+2024-06-03,debit,Bills,1948,Water
+2024-06-04,debit,Bills,2513,Electricity
+2024-06-04,debit,Food,2326,Swiggy
+2024-06-04,debit,Entertainment,2136,OTT
+2024-06-05,debit,Bills,2732,Electricity
+2024-06-05,debit,Entertainment,364,Games
+2024-06-06,debit,Groceries,1297,Local Store
+2024-06-06,debit,Entertainment,2130,Games
+2024-06-06,debit,Transport,2899,Uber
+2024-06-06,debit,Fuel,1737,Petrol Pump
+2024-06-07,debit,Transport,328,Bus
+2024-06-07,debit,Entertainment,2651,Movie
+2024-06-07,debit,Transport,1523,Auto
+2024-06-07,debit,Entertainment,801,OTT
+2024-06-08,debit,Fuel,665,Petrol Pump
+2024-06-08,debit,Transport,2110,Uber
+2024-06-09,debit,Shopping,2695,Flipkart
+2024-06-09,debit,Bills,95,Water
+2024-06-10,debit,Food,1395,Restaurant
+2024-06-10,debit,Food,2710,Cafe
+2024-06-11,debit,Bills,902,Internet
+2024-06-11,debit,Fuel,1727,Petrol Pump
+2024-06-11,debit,Food,1641,Swiggy
+2024-06-11,debit,Bills,1192,Water
+2024-06-12,debit,Bills,1856,Internet
+2024-06-12,debit,Groceries,2794,Local Store
+2024-06-12,debit,Food,1163,Restaurant
+2024-06-13,debit,Bills,2624,Water
+2024-06-13,debit,Fuel,398,Petrol Pump
+2024-06-13,debit,Fuel,359,Petrol Pump
+2024-06-13,debit,Transport,126,Uber
+2024-06-14,debit,Food,2523,Zomato
+2024-06-15,debit,Fuel,2745,Petrol Pump
+2024-06-15,debit,Fuel,464,Petrol Pump
+2024-06-16,debit,Shopping,1776,Amazon
+2024-06-17,debit,Fuel,1602,Petrol Pump
+2024-06-17,debit,Food,1565,Swiggy
+2024-06-18,debit,Bills,535,Internet
+2024-06-18,debit,Shopping,1666,Mall
+2024-06-18,debit,Transport,2776,Bus
+2024-06-18,debit,Transport,1878,Uber
+2024-06-19,debit,Transport,2695,Bus
+2024-06-20,debit,Groceries,1874,Local Store
+2024-06-20,debit,Fuel,1424,Petrol Pump
+2024-06-21,debit,Groceries,448,Supermarket
+2024-06-21,debit,Entertainment,2534,Movie
+2024-06-21,debit,Entertainment,2512,Movie
+2024-06-22,debit,Groceries,1731,Local Store
+2024-06-23,debit,Entertainment,373,Games
+2024-06-24,debit,Fuel,2632,Petrol Pump
+2024-06-24,debit,Groceries,421,Supermarket
+2024-06-24,debit,Shopping,1484,Amazon
+2024-06-24,debit,Shopping,447,Mall
+2024-06-25,debit,Fuel,2545,Petrol Pump
+2024-06-26,debit,Shopping,2403,Flipkart
+2024-06-26,debit,Entertainment,563,Games
+2024-06-27,debit,Food,1580,Swiggy
+2024-06-28,debit,Groceries,2521,Local Store
+2024-06-28,debit,Food,1949,Restaurant
+2024-06-29,debit,Transport,1319,Uber
+2024-06-29,debit,Bills,2784,Internet
+2024-06-29,debit,Groceries,2497,Local Store
+2024-06-29,debit,Groceries,590,Supermarket
+2024-06-30,debit,Bills,367,Electricity
+2024-06-30,debit,Fuel,965,Petrol Pump
+2024-06-30,debit,Entertainment,621,Games
+2024-07-01,credit,Salary,50000,Monthly Salary
+2024-07-01,debit,Transport,791,Auto
+2024-07-02,debit,Fuel,2625,Petrol Pump
+2024-07-02,debit,Groceries,1250,Local Store
+2024-07-02,debit,Shopping,1713,Flipkart
+2024-07-03,debit,Groceries,715,Supermarket
+2024-07-03,debit,Shopping,1167,Amazon
+2024-07-03,debit,Groceries,2854,Local Store
+2024-07-03,debit,Groceries,1101,Supermarket
+2024-07-04,debit,Fuel,262,Petrol Pump
+2024-07-04,debit,Entertainment,2184,Movie
+2024-07-04,debit,Shopping,1527,Flipkart
+2024-07-05,debit,Shopping,585,Mall
+2024-07-05,debit,Food,2430,Restaurant
+2024-07-05,debit,Groceries,2408,Supermarket
+2024-07-06,debit,Bills,2031,Electricity
+2024-07-06,debit,Groceries,133,Local Store
+2024-07-06,debit,Food,2242,Restaurant
+2024-07-07,debit,Bills,1498,Internet
+2024-07-07,debit,Shopping,2542,Flipkart
+2024-07-08,debit,Shopping,1718,Amazon
+2024-07-08,debit,Shopping,311,Flipkart
+2024-07-08,debit,Bills,1488,Internet
+2024-07-08,debit,Groceries,1325,Supermarket
+2024-07-09,debit,Shopping,2016,Mall
+2024-07-10,debit,Food,1875,Swiggy
+2024-07-10,debit,Transport,2027,Auto
+2024-07-10,debit,Bills,1479,Internet
+2024-07-10,debit,Bills,741,Electricity
+2024-07-11,debit,Entertainment,986,Movie
+2024-07-12,debit,Entertainment,601,Movie
+2024-07-13,debit,Bills,2087,Electricity
+2024-07-13,debit,Bills,869,Water
+2024-07-14,debit,Food,515,Restaurant
+2024-07-14,debit,Entertainment,1306,OTT
+2024-07-14,debit,Shopping,2416,Amazon
+2024-07-14,debit,Entertainment,437,OTT
+2024-07-15,debit,Entertainment,1018,OTT
+2024-07-16,debit,Shopping,2282,Amazon
+2024-07-16,debit,Transport,2496,Auto
+2024-07-16,debit,Bills,1350,Water
+2024-07-16,debit,Transport,2990,Auto
+2024-07-17,debit,Bills,2266,Internet
+2024-07-18,debit,Shopping,2667,Amazon
+2024-07-18,debit,Food,1667,Zomato
