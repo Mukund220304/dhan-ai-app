@@ -158,7 +158,7 @@ export default function LandingPage() {
                 <motion.div 
                   key={label}
                   style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: 20, padding: 30, transform: 'translateZ(40px)', position: 'relative', overflow: 'hidden' }}
-                  whileHover={{ translateZ: 80, scale: 1.05, borderColor: color, boxShadow: \`0 20px 40px \${color}40\` }}
+                  whileHover={{ translateZ: 80, scale: 1.05, borderColor: color, boxShadow: `0 20px 40px ${color}40` }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <div style={{ position: 'absolute', top: -50, right: -50, width: 100, height: 100, background: color, filter: 'blur(50px)', opacity: 0.2 }} />
@@ -214,14 +214,14 @@ export default function LandingPage() {
                   transform: 'translateZ(20px)'
                 }}
                 whileHover={{ 
-                  borderColor: \`\${f.color}60\`,
-                  boxShadow: \`0 30px 60px rgba(0,0,0,0.8), inset 0 0 80px \${f.color}15\`
+                  borderColor: `${f.color}60`,
+                  boxShadow: `0 30px 60px rgba(0,0,0,0.8), inset 0 0 80px ${f.color}15`
                 }}
               >
                 {/* Internal Card Glow */}
                 <div style={{ position: 'absolute', top: 0, right: 0, width: 150, height: 150, background: f.color, filter: 'blur(80px)', opacity: 0.15, transform: 'translateZ(0)' }} />
                 
-                <div style={{ width: 72, height: 72, borderRadius: 20, background: \`\${f.color}15\`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 32, border: \`1px solid \${f.color}40\`, transform: 'translateZ(40px)', boxShadow: \`0 10px 20px \${f.color}20\` }}>
+                <div style={{ width: 72, height: 72, borderRadius: 20, background: `${f.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 32, border: `1px solid ${f.color}40`, transform: 'translateZ(40px)', boxShadow: `0 10px 20px ${f.color}20` }}>
                   <f.icon size={36} color={f.color} />
                 </div>
                 <h3 style={{ fontSize: 26, fontWeight: 800, marginBottom: 16, color: 'white', transform: 'translateZ(30px)' }}>{f.title}</h3>
