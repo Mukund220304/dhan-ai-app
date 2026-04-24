@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { registerUser, loginUser, verifyOTP, resendOTP } from '../services/api';
-import { Eye, EyeOff, Zap, Brain, TrendingUp, Shield, ArrowLeft, RefreshCw, Mail } from 'lucide-react';
+import { Eye, EyeOff, Brain, TrendingUp, Shield, ArrowLeft, RefreshCw, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from '../components/Logo';
 
 const features = [
   { icon: Brain, text: 'AI-powered spending insights' },
@@ -134,11 +135,8 @@ export default function AuthPage() {
 
       {/* Left branding panel */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '60px 80px', position: 'relative', zIndex: 10 }}>
-        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 56, cursor: 'pointer' }} onClick={() => navigate('/')}>
-          <div style={{ width: 44, height: 44, borderRadius: 12, background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 20px rgba(99, 102, 241, 0.4)' }}>
-            <Zap size={22} color="white" />
-          </div>
-          <span style={{ fontSize: 24, fontWeight: 800, letterSpacing: '-0.5px' }}>Dhan<span style={{ color: '#818cf8' }}>AI</span></span>
+        <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} style={{ marginBottom: 56, cursor: 'pointer' }} onClick={() => navigate('/')}>
+          <Logo size="medium" />
         </motion.div>
 
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} style={{ fontSize: 64, fontWeight: 900, lineHeight: 1.1, marginBottom: 24, letterSpacing: '-2px', textShadow: '0 10px 40px rgba(0,0,0,0.5)' }}>
