@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { registerUser, loginUser, verifyOTP, resendOTP } from '../services/api';
+import { registerUser, loginUser, verifyOTP, resendOTP, forgotPassword, resetPassword } from '../services/api';
 import { Eye, EyeOff, Brain, TrendingUp, Shield, ArrowLeft, RefreshCw, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from '../components/Logo';
@@ -46,19 +46,24 @@ export default function AuthPage() {
       if (mode === 'login') {
         const res = await loginUser({ email: form.email, password: form.password });
         if (res.data.requiresOTP) {
-          setOtpState({ active: true, email: res.data.email || form.email, digits: ['', '', '', '', '', ''] });
+          setOtpState({ active: true, email: res.data.email || form.email, digits: ['', '', '', '', '', ''], purpose: 'register' });
           setResendTimer(60);
         } else {
           localStorage.setItem('dhanai_token', res.data.token);
           window.location.href = '/dashboard';
         }
-      } else {
+      } else if (mode === 'register') {
         if (!form.name.trim()) { setError('Name is required'); setLoading(false); return; }
         const res = await registerUser({ name: form.name, email: form.email, password: form.password });
         if (res.data.requiresOTP) {
-          setOtpState({ active: true, email: res.data.email || form.email, digits: ['', '', '', '', '', ''] });
+          setOtpState({ active: true, email: res.data.email || form.email, digits: ['', '', '', '', '', ''], purpose: 'register' });
           setResendTimer(60);
         }
+      } else if (mode === 'forgot-password') {
+        if (!form.email.trim()) { setError('Email is required'); setLoading(false); return; }
+        await forgotPassword({ email: form.email });
+        setOtpState({ active: true, email: form.email, digits: ['', '', '', '', '', ''], purpose: 'reset' });
+        setResendTimer(60);
       }
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong');
@@ -89,9 +94,22 @@ export default function AuthPage() {
     if (otp.length < 6) { setError('Enter all 6 digits'); return; }
     setLoading(true); setError('');
     try {
-      const res = await verifyOTP({ email: otpState.email, otp });
-      localStorage.setItem('dhanai_token', res.data.token);
-      window.location.href = '/dashboard';
+      if (otpState.purpose === 'reset') {
+        if (!form.password || form.password.length < 6) {
+          setError('Please provide a new password (min 6 chars)');
+          setLoading(false);
+          return;
+        }
+        await resetPassword({ email: otpState.email, otp, newPassword: form.password });
+        setOtpState({ active: false, email: '', digits: ['', '', '', '', '', ''], purpose: '' });
+        setMode('login');
+        setForm({ name: '', email: '', password: '' });
+        setError('Password reset successfully! Please log in.'); // Actually use a success state, but error string works temporarily as banner
+      } else {
+        const res = await verifyOTP({ email: otpState.email, otp });
+        localStorage.setItem('dhanai_token', res.data.token);
+        window.location.href = '/dashboard';
+      }
     } catch (err) {
       setError(err.response?.data?.message || 'Invalid OTP');
     } finally { setLoading(false); }
@@ -187,7 +205,7 @@ export default function AuthPage() {
                   </p>
                 </div>
 
-                {error && <div style={{ marginBottom: 24, padding: '12px 16px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: 12, fontSize: 14, color: '#f87171', textAlign: 'center', fontWeight: 500 }}>{error}</div>}
+                {error && <div style={{ marginBottom: 24, padding: '12px 16px', background: error.includes('success') ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)', border: `1px solid ${error.includes('success') ? 'rgba(34, 197, 94, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`, borderRadius: 12, fontSize: 14, color: error.includes('success') ? '#4ade80' : '#f87171', textAlign: 'center', fontWeight: 500 }}>{error}</div>}
 
                 {/* OTP digit inputs */}
                 <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 32 }} onPaste={handleOTPPaste}>
@@ -215,8 +233,20 @@ export default function AuthPage() {
                   ))}
                 </div>
 
+                {otpState.purpose === 'reset' && (
+                  <div style={{ marginBottom: 32 }}>
+                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.7)', marginBottom: 8, textAlign: 'center' }}>Enter New Password</label>
+                    <div style={{ position: 'relative' }}>
+                      <input name="password" type={showPass ? 'text' : 'password'} value={form.password} onChange={handleChange} required placeholder="••••••••" style={{ ...inputStyle, paddingRight: 44 }} onFocus={e => e.target.style.borderColor='#818cf8'} onBlur={e => e.target.style.borderColor='rgba(255,255,255,0.1)'} />
+                      <button type="button" onClick={() => setShowPass(p => !p)} style={{ position: 'absolute', right: 16, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.5)', display: 'flex', padding: 0 }}>
+                        {showPass ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
+                    </div>
+                  </div>
+                )}
+
                 <button onClick={handleVerifyOTP} disabled={loading || otpState.digits.join('').length < 6} style={{ width: '100%', padding: '16px', background: 'linear-gradient(to right, #818cf8, #c084fc)', color: 'white', border: 'none', borderRadius: 12, fontSize: 16, fontWeight: 700, cursor: (loading || otpState.digits.join('').length < 6) ? 'not-allowed' : 'pointer', opacity: (loading || otpState.digits.join('').length < 6) ? 0.7 : 1, transition: 'transform 0.2s, opacity 0.2s' }} onMouseEnter={e => !e.currentTarget.disabled && (e.currentTarget.style.transform='scale(1.02)')} onMouseLeave={e => !e.currentTarget.disabled && (e.currentTarget.style.transform='scale(1)')}>
-                  Verify & Continue
+                  {otpState.purpose === 'reset' ? 'Reset Password' : 'Verify & Continue'}
                 </button>
 
                 <div style={{ textAlign: 'center', marginTop: 24 }}>
@@ -232,14 +262,14 @@ export default function AuthPage() {
               <motion.div key="form" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }}>
                 <div style={{ marginBottom: 40 }}>
                   <h1 style={{ fontSize: 32, fontWeight: 800, marginBottom: 8, letterSpacing: '-1px' }}>
-                    {mode === 'login' ? 'Welcome back 👋' : 'Create account'}
+                    {mode === 'login' ? 'Welcome back 👋' : mode === 'forgot-password' ? 'Reset Password' : 'Create account'}
                   </h1>
                   <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)' }}>
-                    {mode === 'login' ? 'Sign in to continue to Dhan AI' : 'Start your AI-powered financial journey'}
+                    {mode === 'login' ? 'Sign in to continue to Dhan AI' : mode === 'forgot-password' ? "We'll send an OTP to your email" : 'Start your AI-powered financial journey'}
                   </p>
                 </div>
 
-                {error && <div style={{ marginBottom: 24, padding: '12px 16px', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: 12, fontSize: 14, color: '#f87171', fontWeight: 500 }}>{error}</div>}
+                {error && <div style={{ marginBottom: 24, padding: '12px 16px', background: error.includes('success') ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)', border: `1px solid ${error.includes('success') ? 'rgba(34, 197, 94, 0.3)' : 'rgba(239, 68, 68, 0.3)'}`, borderRadius: 12, fontSize: 14, color: error.includes('success') ? '#4ade80' : '#f87171', fontWeight: 500 }}>{error}</div>}
 
                 <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
                   {mode === 'register' && (
@@ -252,23 +282,30 @@ export default function AuthPage() {
                     <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.7)', marginBottom: 8 }}>Email</label>
                     <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="you@example.com" style={inputStyle} onFocus={e => e.target.style.borderColor='#818cf8'} onBlur={e => e.target.style.borderColor='rgba(255,255,255,0.1)'} />
                   </div>
-                  <div>
-                    <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.7)', marginBottom: 8 }}>Password</label>
-                    <div style={{ position: 'relative' }}>
-                      <input name="password" type={showPass ? 'text' : 'password'} value={form.password} onChange={handleChange} required placeholder="••••••••" style={{ ...inputStyle, paddingRight: 44 }} onFocus={e => e.target.style.borderColor='#818cf8'} onBlur={e => e.target.style.borderColor='rgba(255,255,255,0.1)'} />
-                      <button type="button" onClick={() => setShowPass(p => !p)} style={{ position: 'absolute', right: 16, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.5)', display: 'flex', padding: 0 }}>
-                        {showPass ? <EyeOff size={18} /> : <Eye size={18} />}
-                      </button>
+                  {mode !== 'forgot-password' && (
+                    <div>
+                      <label style={{ display: 'block', fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.7)', marginBottom: 8 }}>Password</label>
+                      <div style={{ position: 'relative' }}>
+                        <input name="password" type={showPass ? 'text' : 'password'} value={form.password} onChange={handleChange} required placeholder="••••••••" style={{ ...inputStyle, paddingRight: 44 }} onFocus={e => e.target.style.borderColor='#818cf8'} onBlur={e => e.target.style.borderColor='rgba(255,255,255,0.1)'} />
+                        <button type="button" onClick={() => setShowPass(p => !p)} style={{ position: 'absolute', right: 16, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.5)', display: 'flex', padding: 0 }}>
+                          {showPass ? <EyeOff size={18} /> : <Eye size={18} />}
+                        </button>
+                      </div>
+                      {mode === 'login' && (
+                        <div style={{ textAlign: 'right', marginTop: 8 }}>
+                          <button type="button" onClick={() => { setMode('forgot-password'); setError(''); }} style={{ background: 'none', border: 'none', color: '#818cf8', fontSize: 13, cursor: 'pointer', fontWeight: 600 }}>Forgot Password?</button>
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  )}
 
                   <button type="submit" disabled={loading} style={{ padding: '16px', background: 'linear-gradient(to right, #818cf8, #c084fc)', color: 'white', border: 'none', borderRadius: 12, fontSize: 16, fontWeight: 700, marginTop: 8, cursor: loading ? 'not-allowed' : 'pointer', opacity: loading ? 0.7 : 1, transition: 'transform 0.2s' }} onMouseEnter={e => !loading && (e.currentTarget.style.transform='scale(1.02)')} onMouseLeave={e => !loading && (e.currentTarget.style.transform='scale(1)')}>
-                    {mode === 'login' ? 'Sign In' : 'Create Account'}
+                    {mode === 'login' ? 'Sign In' : mode === 'forgot-password' ? 'Send Reset OTP' : 'Create Account'}
                   </button>
                 </form>
 
                 <p style={{ marginTop: 32, textAlign: 'center', fontSize: 14, color: 'rgba(255,255,255,0.6)' }}>
-                  {mode === 'login' ? "Don't have an account? " : 'Already have an account? '}
+                  {mode === 'login' ? "Don't have an account? " : mode === 'forgot-password' ? 'Remember your password? ' : 'Already have an account? '}
                   <button onClick={() => { setMode(m => m === 'login' ? 'register' : 'login'); setError(''); setForm({ name:'',email:'',password:'' }); }}
                     style={{ background:'none', border:'none', cursor:'pointer', color:'#818cf8', fontWeight:700, fontSize:14, transition: 'color 0.2s' }} onMouseEnter={e=>e.currentTarget.style.color='#c084fc'} onMouseLeave={e=>e.currentTarget.style.color='#818cf8'}>
                     {mode === 'login' ? 'Sign up free' : 'Log in'}

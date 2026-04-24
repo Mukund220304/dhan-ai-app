@@ -144,4 +144,59 @@ const getMe = async (req, res) => {
   res.json(safeUser(user, null));
 };
 
-module.exports = { registerUser, loginUser, verifyOTP, resendOTP, getMe };
+// POST /api/auth/forgot-password
+const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ message: 'Email is required' });
+
+    const user = await User.findOne({ email: email.toLowerCase() });
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    const otp = generateOTP();
+    user.otp = otp;
+    user.otpExpiry = new Date(Date.now() + 10 * 60 * 1000); // 10 min
+    await user.save();
+
+    try { await sendOTPEmail(email, user.name, otp); } catch (e) { console.warn('Email failed:', e.message); }
+    res.json({ message: 'OTP sent to your email for password reset.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error during forgot password' });
+  }
+};
+
+// POST /api/auth/reset-password
+const resetPassword = async (req, res) => {
+  try {
+    const { email, otp, newPassword } = req.body;
+    if (!email || !otp || !newPassword) return res.status(400).json({ message: 'All fields are required' });
+
+    const user = await User.findOne({ email: email.toLowerCase() });
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    if (!user.otp || !user.otpExpiry)
+      return res.status(400).json({ message: 'No OTP requested.' });
+
+    if (new Date() > user.otpExpiry)
+      return res.status(400).json({ message: 'OTP has expired.' });
+
+    if (user.otp !== otp.trim())
+      return res.status(400).json({ message: 'Invalid OTP.' });
+
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    user.password = hashedPassword;
+    user.otp = undefined;
+    user.otpExpiry = undefined;
+    await user.save();
+
+    res.json({ message: 'Password reset successful. You can now log in.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error during password reset' });
+  }
+};
+
+module.exports = { registerUser, loginUser, verifyOTP, resendOTP, getMe, forgotPassword, resetPassword };
